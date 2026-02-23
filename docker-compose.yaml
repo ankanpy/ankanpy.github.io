@@ -1,7 +1,6 @@
 services:
   jekyll-site:
-    image: jekyll-site
-    build: .
+    image: ankan-portfolio
     volumes: [ .:/usr/src/app ]
     ports: [ 4000:4000 ]
     user: 1000:1000
