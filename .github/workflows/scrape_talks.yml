@@ -30,6 +30,10 @@ jobs:
       run: |
         jupyter nbconvert --to notebook --execute talkmap.ipynb --output talkmap_out.ipynb
 
+    - name: Fix insecure tile URL in generated map
+      run: |
+        sed -i 's|http://server.arcgisonline.com|https://server.arcgisonline.com|g' talkmap/map.html
+
     - name: Commit changes
       run: |
         git config user.name "github-actions[bot]"
