@@ -1,152 +1,192 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
+    "name": "Ankan Ghosh",
+    "email": "work.ankanghosh@gmail.com",
     "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "website": "https://ankanpy.github.io",
+    "summary": "Senior ML Engineer at AIVAR (AWS Partner). Previously at OpenCV. Building with CNNs, VLMs, and generative models. Technical writer at LearnOpenCV.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "city": "Bengaluru",
+      "countryCode": "IN",
+      "region": "Karnataka"
     },
     "profiles": [
       {
         "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-      },
-      {
-        "network": "ORCID",
-        "username": "",
-        "url": "https://orcid.org/yourorcidurl"
+        "username": "ankanpy",
+        "url": "https://scholar.google.com/citations?user=2wYGQJkAAAAJ&hl=en"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "ankanpy",
+        "url": "https://github.com/ankanpy"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "ankanpy",
+        "url": "https://www.linkedin.com/in/ankanpy"
+      },
+      {
+        "network": "Twitter",
+        "username": "ankanpy",
+        "url": "https://twitter.com/ankanpy"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "AIVAR (AWS Partner)",
+      "position": "Senior Machine Learning Engineer",
+      "website": "",
+      "startDate": "2025-09-01",
+      "endDate": "",
+      "summary": "Leading all Vision projects, managing teams of 20+ Engineers.",
+      "highlights": [
+        "Delivered 3 projects: Medical image segmentation, Civil tile detection & extraction, Finance OCR & RAG pipeline using AWS (SageMaker, ECS, Batch, S3, DynamoDB, SQS, CloudWatch).",
+        "Architecting solutions for clients including Swiggy, Licious, Zepto, and LendenClub."
+      ]
+    },
+    {
+      "company": "OpenCV",
+      "position": "Senior Computer Vision Engineer",
+      "website": "https://opencv.org",
+      "startDate": "2023-10-01",
+      "endDate": "2025-08-01",
+      "summary": "Led R&D at OpenCV University; architected solutions from PoC to production.",
+      "highlights": [
+        "Built solutions with CNNs, YOLO11, SAM2, ViT, OpenCV, DETR, SDXL, NeRF, 3DGS, VLMs, PEFT, RLHF, SFT, LoRA, MCP, ADK.",
+        "Worked on internal CRM OpenCV-SyncX; automated production deployment on AWS (EKS, EC2, Lambda, S3, RDS, DynamoDB).",
+        "Engineered LLM workflow with 82.5% accuracy for sales call analysis using HuggingFace, OpenAI, FastAPI, WhisperX.",
+        "Built OpenCV Demo Website; developed 20+ Computer Vision and LLM applications."
+      ]
+    },
+    {
+      "company": "IIT Gandhinagar",
+      "position": "Computer Vision Intern",
+      "website": "https://iitgn.ac.in",
+      "startDate": "2022-09-01",
+      "endDate": "2023-02-01",
+      "summary": "Implemented Depth Estimation on OAK-D camera and deployed on Jetson Nano.",
+      "highlights": [
+        "Contribution led to the startup being selected for the META XR Program."
+      ]
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
-      "gpa": null,
+      "institution": "MAKAUT",
+      "area": "B.S. in Information Technology (AI)",
+      "studyType": "Bachelor",
+      "startDate": "2020-01-01",
+      "endDate": "2023-01-01",
+      "gpa": "9.2/10",
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
-      "gpa": null,
-      "courses": []
-    },
-    {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "IIT Roorkee",
+      "area": "Deep Learning & Artificial Intelligence",
+      "studyType": "Certificate",
+      "startDate": "2021-09-01",
+      "endDate": "2021-02-01",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
+  "skills": [
+    {
+      "name": "Machine Learning & CV",
+      "keywords": ["PyTorch", "OpenCV", "YOLO", "SAM2", "ViT", "DETR", "NeRF", "3DGS", "TensorRT", "JAX", "Keras"]
+    },
+    {
+      "name": "LLM & Generative AI",
+      "keywords": ["VLMs", "PEFT", "RLHF", "SFT", "LoRA", "LangChain", "LlamaIndex", "vLLM", "Ollama", "RAG", "HuggingFace", "Diffusers", "TRL"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "keywords": ["AWS", "GCP", "Docker", "Kubernetes", "SageMaker", "EKS", "EC2", "Lambda", "S3", "RDS", "DynamoDB"]
+    },
+    {
+      "name": "Languages & Frameworks",
+      "keywords": ["Python", "C++", "FastAPI", "Gradio", "Streamlit", "Git"]
+    }
+  ],
+  "languages": [
+    {"language": "English", "fluency": "Professional"},
+    {"language": "Bengali", "fluency": "Native"},
+    {"language": "Hindi", "fluency": "Conversational"}
+  ],
   "interests": [],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "https://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "FineTuning SAM2 for Leaf Disease Segmentation",
+      "publisher": "LearnOpenCV",
+      "releaseDate": "2025-02-01",
+      "website": "https://learnopencv.com/finetuning-sam2/",
+      "summary": "Step-by-step fine-tuning guide achieving 74% IoU. 200+ LinkedIn likes."
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "https://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "YOLO11: Redefining Real-Time Object Detection",
+      "publisher": "LearnOpenCV",
+      "releaseDate": "2024-10-01",
+      "website": "https://learnopencv.com/yolo11/",
+      "summary": "Cited by 2 academic papers; shared by Ultralytics official channels."
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "FineTuning RetinaNet for Wildlife Detection with PyTorch",
+      "publisher": "LearnOpenCV",
+      "releaseDate": "2025-03-01",
+      "website": "https://learnopencv.com/finetuning-retinanet-for-wildlife-detection/",
+      "summary": "Featured at Dubai Expo. 79% accuracy on wildlife detection."
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "https://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "YOLOv8 Object Tracking and Counting with OpenCV",
+      "publisher": "LearnOpenCV",
+      "releaseDate": "2024-01-01",
+      "website": "https://learnopencv.com/yolov8-object-tracking-and-counting-with-opencv/",
+      "summary": "Led to a job offer from Liquid Trees, San Francisco."
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "name": "VisionCraft: Building Production CV Systems",
+      "event": "Tech Conference",
+      "date": "2024-04-01",
+      "location": "India",
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
-      "description": ""
-    },
-    {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
+      "name": "Computer Vision in Production",
+      "event": "TechX Bangalore",
+      "date": "2024-12-01",
+      "location": "Bengaluru, India",
       "description": ""
     }
   ],
-  "teaching": [
-    {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
-    },
-    {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
-    }
-  ],
+  "teaching": [],
   "portfolio": [
     {
-      "name": "Portfolio item number 1",
+      "name": "PixelFusion",
       "category": "portfolio",
       "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+      "url": "https://huggingface.co/spaces/ankanpy/pixelfusion",
+      "description": "Gradio demo for Artistic Neural Style Transfer. 16.5k Twitter views."
+    },
+    {
+      "name": "SegMagine",
+      "category": "portfolio",
+      "date": "",
+      "url": "https://huggingface.co/spaces/ankanpy/segmagine",
+      "description": "Gradio demo for Segment Anything Model (SAM) by Meta. 21k Twitter views."
+    },
+    {
+      "name": "DocuMind",
+      "category": "portfolio",
+      "date": "",
+      "url": "https://huggingface.co/spaces/ankanpy/documind",
+      "description": "End-to-End RAG application for document analysis. 2k Twitter views."
     }
   ]
 }
