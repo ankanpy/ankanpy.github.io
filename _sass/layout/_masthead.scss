@@ -4,7 +4,9 @@
 
 .masthead {
   position: fixed;
-  background: var(--global-bg-color);
+  background: var(--global-masthead-bg, var(--global-bg-color));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   height: fit-content;
   top: 0;
   width: 100%;
@@ -14,14 +16,10 @@
   -webkit-animation-delay: 0.15s;
           animation-delay: 0.15s;
   z-index: 20;
+  box-shadow: 0 1px 0 var(--global-border-color), 0 2px 8px rgba(0, 0, 0, 0.04);
 
   &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: 1px;
-    background: var(--global-border-color);
-    width: 100%;
+    content: none;
   }
 
   &__inner-wrap {
@@ -55,7 +53,7 @@
 }
 
 .masthead__menu-item {
-  background-color: var(--global-bg-color);
+  background-color: transparent;
   display: block;
   list-style-type: none;
   white-space: nowrap;

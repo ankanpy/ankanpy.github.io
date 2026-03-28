@@ -4,7 +4,7 @@
     "email": "work.ankanghosh@gmail.com",
     "phone": "",
     "website": "https://ankanpy.github.io",
-    "summary": "Senior ML Engineer at AIVAR (AWS Partner). Previously at OpenCV. Building with CNNs, VLMs, and generative models. Technical writer at LearnOpenCV.",
+    "summary": "Senior ML Engineer at AIVAR (AWS Partner). Previously at OpenCV. Building with CNNs, VLMs, and Diffusion models. Authored 26+ articles at LearnOpenCV.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -97,25 +97,79 @@
   "skills": [
     {
       "name": "Machine Learning & CV",
-      "keywords": ["PyTorch", "OpenCV", "YOLO", "SAM2", "ViT", "DETR", "NeRF", "3DGS", "TensorRT", "JAX", "Keras"]
+      "keywords": [
+        "PyTorch",
+        "OpenCV",
+        "YOLO",
+        "SAM2",
+        "ViT",
+        "DETR",
+        "NeRF",
+        "3DGS",
+        "TensorRT",
+        "JAX",
+        "Keras"
+      ]
     },
     {
       "name": "LLM & Generative AI",
-      "keywords": ["VLMs", "PEFT", "RLHF", "SFT", "LoRA", "LangChain", "LlamaIndex", "vLLM", "Ollama", "RAG", "HuggingFace", "Diffusers", "TRL"]
+      "keywords": [
+        "VLMs",
+        "PEFT",
+        "RLHF",
+        "SFT",
+        "LoRA",
+        "LangChain",
+        "LlamaIndex",
+        "vLLM",
+        "Ollama",
+        "RAG",
+        "HuggingFace",
+        "Diffusers",
+        "TRL"
+      ]
     },
     {
       "name": "Cloud & DevOps",
-      "keywords": ["AWS", "GCP", "Docker", "Kubernetes", "SageMaker", "EKS", "EC2", "Lambda", "S3", "RDS", "DynamoDB"]
+      "keywords": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "SageMaker",
+        "EKS",
+        "EC2",
+        "Lambda",
+        "S3",
+        "RDS",
+        "DynamoDB"
+      ]
     },
     {
       "name": "Languages & Frameworks",
-      "keywords": ["Python", "C++", "FastAPI", "Gradio", "Streamlit", "Git"]
+      "keywords": [
+        "Python",
+        "C++",
+        "FastAPI",
+        "Gradio",
+        "Streamlit",
+        "Git"
+      ]
     }
   ],
   "languages": [
-    {"language": "English", "fluency": "Professional"},
-    {"language": "Bengali", "fluency": "Native"},
-    {"language": "Hindi", "fluency": "Conversational"}
+    {
+      "language": "English",
+      "fluency": "Professional"
+    },
+    {
+      "language": "Bengali",
+      "fluency": "Native"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Conversational"
+    }
   ],
   "interests": [],
   "references": [],
