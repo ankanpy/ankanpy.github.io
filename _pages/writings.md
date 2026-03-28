@@ -110,15 +110,84 @@ author_profile: true
 .pub-carousel-btn.prev { left: 10px; }
 .pub-carousel-btn.next { right: 10px; }
 
-/* ── Year headers ────────────────────────────────────── */
-.writings-year-header {
-  font-size: 1.3em;
-  font-weight: 700;
-  margin: 2.5rem 0 1rem 0;
-  padding-bottom: 0.4rem;
+/* ── Year tabs ───────────────────────────────────────── */
+.writings-header-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.writings-total-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+.writings-total-num {
+  font-size: 2em;
+  font-weight: 800;
+  color: var(--global-link-color, #0284c7);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.writings-total-label {
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--global-muted-color, #6b7280);
+}
+.writings-tab-nav {
+  display: flex;
+  gap: 0;
   border-bottom: 2px solid var(--global-border-color, #e5e7eb);
-  color: var(--global-text-color, #111827);
+  margin-bottom: 1.5rem;
+}
+.writings-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.55em 1.3em;
+  font-size: 0.95em;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--global-muted-color, #6b7280);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.18s, border-color 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
   letter-spacing: -0.01em;
+}
+.writings-tab-btn:hover {
+  color: var(--global-link-color, #0284c7);
+}
+.writings-tab-btn.active {
+  color: var(--global-link-color, #0284c7);
+  border-bottom-color: var(--global-link-color, #0284c7);
+}
+.tab-year-count {
+  display: inline-block;
+  background: var(--global-card-bg-color, #f0f9ff);
+  color: var(--global-muted-color, #6b7280);
+  border-radius: 20px;
+  padding: 0.05em 0.55em;
+  font-size: 0.75em;
+  font-weight: 700;
+  border: 1px solid var(--global-border-color, #e5e7eb);
+}
+.writings-tab-btn.active .tab-year-count {
+  background: var(--global-link-color, #0284c7);
+  color: #fff;
+  border-color: var(--global-link-color, #0284c7);
+}
+.writings-tab-panel {
+  display: none;
+  animation: fadeInUp 0.25s ease both;
+}
+.writings-tab-panel.active {
+  display: block;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Grid ────────────────────────────────────────────── */
@@ -188,16 +257,27 @@ author_profile: true
   line-height: 1.7;
 }
 
-.writings-count-badge {
-  display: inline-block;
-  background: var(--global-link-color, #0284c7);
-  color: #fff;
+.loc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  background: var(--global-card-bg-color, #f0f9ff);
+  color: var(--global-link-color, #0284c7) !important;
+  border: 1px solid var(--global-link-color, #0284c7);
   border-radius: 20px;
-  padding: 0.2em 0.8em;
-  font-size: 0.82em;
-  font-weight: 600;
-  margin-left: 0.5rem;
+  padding: 0.05em 0.55em;
+  font-size: 0.78em;
+  font-weight: 700;
+  text-decoration: none !important;
   vertical-align: middle;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.loc-pill:hover {
+  background: var(--global-link-color, #0284c7);
+  color: #fff !important;
+  text-decoration: none !important;
 }
 </style>
 
@@ -270,12 +350,22 @@ author_profile: true
 </script>
 
 <p class="writings-intro">
-  All my technical articles published at <a href="https://learnopencv.com/author/ankan/" target="_blank" rel="noopener">LearnOpenCV</a> — covering Computer Vision, Deep Learning, LLMs, VLMs, and Robotics.
-  <span class="writings-count-badge">26 articles</span>
+  All my technical articles published at <a href="https://learnopencv.com/author/ankan/" target="_blank" rel="noopener" class="loc-pill">LearnOpenCV</a> — covering Computer Vision, Deep Learning, LLMs, VLMs, Agents and Robotics.
 </p>
 
-<div class="writings-year-header">2025</div>
+<div class="writings-header-row">
+  <div class="writings-total-stat">
+    <span class="writings-total-num">26</span>
+    <span class="writings-total-label">Published Articles</span>
+  </div>
+</div>
 
+<div class="writings-tab-nav">
+  <button class="writings-tab-btn active" data-year="2025">2025 <span class="tab-year-count">12</span></button>
+  <button class="writings-tab-btn" data-year="2024">2024 <span class="tab-year-count">14</span></button>
+</div>
+
+<div class="writings-tab-panel active" id="year-2025">
 <div class="writings-grid">
   <div class="writing-card">
     <a href="https://learnopencv.com/object-detection-spatial-understanding-vlms-qwen2-5-vl/" target="_blank" rel="noopener">Object Detection and Spatial Understanding with VLMs ft. Qwen2.5-VL</a>
@@ -338,9 +428,9 @@ author_profile: true
     <div class="writing-tags"><span class="writing-tag">SAM2</span><span class="writing-tag">Segmentation</span><span class="writing-tag">Fine-tuning</span></div>
   </div>
 </div>
+</div><!-- /year-2025 -->
 
-<div class="writings-year-header">2024</div>
-
+<div class="writings-tab-panel" id="year-2024">
 <div class="writings-grid">
   <div class="writing-card">
     <a href="https://learnopencv.com/image-captioning-using-resnet-and-lstm/" target="_blank" rel="noopener">Image Captioning using ResNet and LSTM</a>
@@ -413,7 +503,24 @@ author_profile: true
     <div class="writing-tags"><span class="writing-tag">OpenCV</span><span class="writing-tag">Object Detection</span><span class="writing-tag">CV</span></div>
   </div>
 </div>
+</div><!-- /year-2024 -->
 
 <p style="margin-top: 1.5rem;">
   <a href="https://learnopencv.com/author/ankan/" target="_blank" rel="noopener" class="btn btn--primary">View on LearnOpenCV →</a>
 </p>
+
+<script>
+(function() {
+  var btns = document.querySelectorAll('.writings-tab-btn');
+  var panels = document.querySelectorAll('.writings-tab-panel');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var panel = document.getElementById('year-' + btn.getAttribute('data-year'));
+      if (panel) panel.classList.add('active');
+    });
+  });
+})();
+</script>

@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Ankan Ghosh"
 title_separator          : "-"
 name                     : &name "Ankan Ghosh"
-description              : &description "Senior ML Engineer | Computer Vision Researcher | Author @ LearnOpenCV"
+description              : &description "Senior ML Engineer | Computer Vision Architect | Author @ LearnOpenCV"
 url                      : https://ankanpy.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,9 @@ author:
   avatar           : "profile.png"
   name             : "Ankan Ghosh"
   pronouns         : "he/him"  
-  bio              : "Senior ML Engineer at AIVAR. Previously at OpenCV. Building with CNNs, VLMs, and Diffusion models. Author at LearnOpenCV."
+  bio              : "Vision Lead at <strong>AIVAR</strong>.<br>Previously at <strong>OpenCV</strong>.<br>CNNs, VLMs &amp; Diffusion.<br>Author at <strong>LearnOpenCV</strong>."
   location         : "Bengaluru, India"
-  employer         : "AIVAR (AWS Partner)"
+  employer         : "AiVAR (AWS)"
   uri              : "https://linktr.ee/ankanpy"
   email            : "work.ankanghosh@gmail.com"
 

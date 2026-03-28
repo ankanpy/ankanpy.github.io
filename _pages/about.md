@@ -212,13 +212,13 @@ redirect_from:
 
 .timeline-item {
   position: relative;
-  margin-bottom: 1rem;
-  padding: 1rem 1.2rem;
-  border: none;
+  margin-bottom: 0.85rem;
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  border: 1px solid var(--global-border-color, #e5e7eb);
   border-left: 3px solid var(--global-link-color, #0284c7);
-  border-radius: 0 12px 12px 0;
-  background: var(--global-card-bg-color, #f8fafc);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  border-radius: 0 14px 14px 0;
+  background: var(--global-bg-color, #fff);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
@@ -226,8 +226,9 @@ redirect_from:
 }
 
 .timeline-item:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.09);
-  transform: translateX(2px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+  transform: translateX(3px);
+  border-color: var(--global-link-color, #0284c7);
 }
 
 .timeline-item::before {
@@ -240,35 +241,50 @@ redirect_from:
   height: 10px;
   background: var(--global-link-color, #0284c7);
   border-radius: 50%;
-  border: 2px solid var(--global-card-bg-color, #f8fafc);
+  border: 2px solid var(--global-bg-color, #fff);
   box-shadow: 0 0 0 2px var(--global-link-color, #0284c7);
 }
 
-.org-logo-img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 10px;
-  border: none;
-  background: var(--global-bg-color, #fff);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+.org-logo-wrap {
   flex-shrink: 0;
-  padding: 5px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-border-color, #e5e7eb);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.org-logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 .org-logo-placeholder {
-  width: 48px;
-  height: 48px;
-  background: var(--global-bg-color, #fff);
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  width: 52px;
+  height: 52px;
+  background: var(--global-card-bg-color, #f0f9ff);
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color, #e5e7eb);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.75em;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--global-link-color, #0284c7);
   flex-shrink: 0;
+  letter-spacing: -0.02em;
 }
 
 .timeline-text {
@@ -281,16 +297,46 @@ redirect_from:
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0 !important;
 }
 
 .timeline-title {
   font-size: 1.0em;
   font-weight: 700;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   line-height: 1.3;
   color: var(--global-text-color, #111827);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+.timeline-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 0.2rem !important;
+}
+
+.timeline-org-name {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--global-text-color, #374151);
+}
+
+.timeline-date {
+  font-size: 0.79em;
+  font-weight: 400;
+  color: var(--global-muted-color, #9ca3af);
+  display: flex;
+  align-items: center;
+}
+.timeline-date::before {
+  content: '·';
+  margin: 0 0.4em;
+  color: var(--global-border-color, #d1d5db);
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .timeline-subtitle {
@@ -301,15 +347,31 @@ redirect_from:
 }
 
 .timeline-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
   background: var(--global-badge-bg, #dcfce7);
   color: var(--global-badge-text, #166534);
-  border-radius: 12px;
-  padding: 0.2em 0.7em;
-  font-size: 0.72em;
+  border-radius: 20px;
+  padding: 0.18em 0.65em;
+  font-size: 0.7em;
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
+  border: 1px solid rgba(22,101,52,0.15);
+}
+.timeline-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulse-green 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 /* ============================================================
@@ -526,10 +588,10 @@ html[data-theme="dark"] {
     <span id="typed-text"></span><span class="typed-cursor"></span>
   </div>
   <p class="hero-bio">
-    I build production-grade computer vision and ML systems - from CV/OCR and VLM pipelines to Agent workflows and multi-modal models accross <strong>BFSI, FMCG and HCLS</strong>. Currently leading vision projects at <strong>AIVAR (AWS Partner)</strong>; previously Senior CV Engineer at <strong>OpenCV</strong>. I also write in-depth technical articles at <strong>LearnOpenCV</strong>, reaching thousands of engineers worldwide.
+    I build production-grade ML & Physical AI (Computer Vision and Robotics) Systems - from CV/OCR and VLM pipelines to Agentic Workflows and MLOps Deployments accross <strong>BFSI, FMCG and HCLS</strong>. Currently leading vision projects at <strong>AIVAR (AWS Partner)</strong>; previously Senior CV Engineer at <strong>OpenCV</strong>. I also write in-depth technical articles at <strong>LearnOpenCV</strong>, reaching thousands of engineers worldwide.
   </p>
   <div class="hero-cta">
-    <a href="/cv/" class="cta-primary">View CV</a>
+    <a href="/resume/" class="cta-primary">View Resume</a>
     <a href="/writings/" class="cta-secondary">Publications</a>
     <a href="https://scholar.google.com/citations?user=2wYGQJkAAAAJ&hl=en" target="_blank" rel="noopener" class="cta-secondary">Google Scholar</a>
   </div>
@@ -575,29 +637,48 @@ html[data-theme="dark"] {
     <div class="timeline">
 
       <div class="timeline-item">
-        <img src="/images/logo-aivar.png" alt="AIVAR" class="org-logo-img" />
+        <div class="org-logo-wrap">
+          <img src="/images/logo-aivar.png" alt="AIVAR" class="org-logo-img" />
+        </div>
         <div class="timeline-text">
           <div class="timeline-top-row">
             <p class="timeline-title">Senior Machine Learning Engineer</p>
             <span class="timeline-badge">Current</span>
           </div>
-          <p class="timeline-subtitle">AIVAR &mdash; AWS Partner &nbsp;&middot;&nbsp; Sept 2025 &ndash; Present</p>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">AIVAR &mdash; AWS Partner</span>
+            <span class="timeline-date">Sept 2025 &ndash; Present</span>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <img src="/images/logo-opencv.png" alt="OpenCV" class="org-logo-img" />
+        <div class="org-logo-wrap">
+          <img src="/images/logo-opencv.png" alt="OpenCV" class="org-logo-img" />
+        </div>
         <div class="timeline-text">
-          <p class="timeline-title">Senior Computer Vision Engineer</p>
-          <p class="timeline-subtitle">OpenCV &nbsp;&middot;&nbsp; Oct 2023 &ndash; Aug 2025</p>
+          <div class="timeline-top-row">
+            <p class="timeline-title">Senior Computer Vision Engineer</p>
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">OpenCV</span>
+            <span class="timeline-date">Oct 2023 &ndash; Aug 2025</span>
+          </div>
         </div>
       </div>
 
       <div class="timeline-item">
-        <img src="images/logo-iitgn.png" alt="IIT Gandhinagar" class="org-logo-img" />
+        <div class="org-logo-wrap">
+          <img src="images/logo-iitgn.png" alt="IIT Gandhinagar" class="org-logo-img" />
+        </div>
         <div class="timeline-text">
-          <p class="timeline-title">Computer Vision Intern</p>
-          <p class="timeline-subtitle">IIT Gandhinagar &nbsp;&middot;&nbsp; Sep 2022 &ndash; Feb 2023</p>
+          <div class="timeline-top-row">
+            <p class="timeline-title">Computer Vision Intern</p>
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">IIT Gandhinagar</span>
+            <span class="timeline-date">Sep 2022 &ndash; Feb 2023</span>
+          </div>
         </div>
       </div>
 
