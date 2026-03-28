@@ -13,7 +13,7 @@ redirect_from:
    ============================================================ */
 .hero-section {
   padding: 2.5rem 0 2rem 0;
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  border-bottom: 1px solid var(--global-border-color, #e0e0e0);
   margin-bottom: 2.5rem;
 }
 
@@ -23,6 +23,7 @@ redirect_from:
   margin: 0 0 0.3rem 0;
   line-height: 1.15;
   letter-spacing: -0.5px;
+  color: var(--global-text-color, #111827);
 }
 
 .hero-typed-wrapper {
@@ -30,7 +31,7 @@ redirect_from:
   font-weight: 500;
   min-height: 1.8em;
   margin-bottom: 1.1rem;
-  color: var(--link-color, #2196F3);
+  color: var(--global-link-color, #0284c7);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -56,7 +57,7 @@ redirect_from:
   line-height: 1.7;
   max-width: 680px;
   margin-bottom: 1.5rem;
-  color: var(--text-color, #494e52);
+  color: var(--global-text-color, #374151);
 }
 
 .hero-cta {
@@ -70,27 +71,28 @@ redirect_from:
   align-items: center;
   gap: 0.4rem;
   padding: 0.55em 1.3em;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.95em;
   text-decoration: none;
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
 }
 
 .hero-cta a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  opacity: 0.92;
 }
 
 .cta-primary {
-  background: var(--link-color, #2196F3);
+  background: var(--global-link-color, #0284c7);
   color: #fff !important;
 }
 
 .cta-secondary {
   background: transparent;
-  border: 2px solid var(--border-color, #e0e0e0);
-  color: var(--text-color, #494e52) !important;
+  border: 1.5px solid var(--global-border-color, #d1d5db);
+  color: var(--global-text-color, #374151) !important;
 }
 
 /* ============================================================
@@ -102,9 +104,9 @@ redirect_from:
   gap: 1.2rem;
   margin-bottom: 2.5rem;
   padding: 1.2rem 1.5rem;
-  background: var(--masthead-background-color, #f8f9fa);
-  border-radius: 10px;
-  border: 1px solid var(--border-color, #e8e8e8);
+  background: var(--global-card-bg-color, #f8fafc);
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color, #e5e7eb);
 }
 
 .stat-item {
@@ -118,12 +120,12 @@ redirect_from:
   font-size: 1.7em;
   font-weight: 800;
   line-height: 1;
-  color: var(--link-color, #2196F3);
+  color: var(--global-link-color, #0284c7);
 }
 
 .stat-label {
   font-size: 0.75em;
-  color: var(--muted-text-color, #777);
+  color: var(--global-muted-color, #6b7280);
   text-align: center;
   margin-top: 0.2rem;
   font-weight: 500;
@@ -140,14 +142,15 @@ redirect_from:
   font-size: 1.4em;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--border-color, #e0e0e0);
+  border-bottom: 2px solid var(--global-border-color, #e5e7eb);
   padding-bottom: 0.5rem;
+  color: var(--global-text-color, #111827);
 }
 
 .tab-nav {
   display: flex;
   gap: 0;
-  border-bottom: 2px solid var(--border-color, #e0e0e0);
+  border-bottom: 2px solid var(--global-border-color, #e5e7eb);
   margin-bottom: 1.5rem;
 }
 
@@ -158,7 +161,7 @@ redirect_from:
   font-size: 0.95em;
   font-weight: 600;
   cursor: pointer;
-  color: var(--muted-text-color, #777);
+  color: var(--global-muted-color, #6b7280);
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
   transition: color 0.2s, border-color 0.2s;
@@ -166,12 +169,12 @@ redirect_from:
 }
 
 .tab-btn:hover {
-  color: var(--link-color, #2196F3);
+  color: var(--global-link-color, #0284c7);
 }
 
 .tab-btn.active {
-  color: var(--link-color, #2196F3);
-  border-bottom-color: var(--link-color, #2196F3);
+  color: var(--global-link-color, #0284c7);
+  border-bottom-color: var(--global-link-color, #0284c7);
 }
 
 .tab-panel {
@@ -203,123 +206,172 @@ redirect_from:
   top: 6px;
   bottom: 6px;
   width: 2px;
-  background: var(--border-color, #e0e0e0);
+  background: var(--global-border-color, #e5e7eb);
   border-radius: 2px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2rem;
-  padding: 1.2rem 1.3rem;
-  border: 1px solid var(--border-color, #e0e0e0);
-  border-radius: 10px;
-  background: var(--background-color, #fff);
+  margin-bottom: 0.85rem;
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  border: 1px solid var(--global-border-color, #e5e7eb);
+  border-left: 3px solid var(--global-link-color, #0284c7);
+  border-radius: 0 14px 14px 0;
+  background: var(--global-bg-color, #fff);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .timeline-item:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.08);
   transform: translateX(3px);
+  border-color: var(--global-link-color, #0284c7);
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
   left: -1.97rem;
-  top: 1.3rem;
+  top: 50%;
+  transform: translateY(-50%);
   width: 10px;
   height: 10px;
-  background: var(--link-color, #2196F3);
+  background: var(--global-link-color, #0284c7);
   border-radius: 50%;
-  border: 2px solid var(--background-color, #fff);
-  box-shadow: 0 0 0 2px var(--link-color, #2196F3);
+  border: 2px solid var(--global-bg-color, #fff);
+  box-shadow: 0 0 0 2px var(--global-link-color, #0284c7);
 }
 
-.timeline-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.3rem;
-}
-
-.timeline-org {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.org-logo-placeholder {
-  width: 36px;
-  height: 36px;
-  background: var(--masthead-background-color, #f0f4ff);
-  border: 1px solid var(--border-color, #dde);
-  border-radius: 6px;
+.org-logo-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--global-bg-color, #fff);
+  border: 1px solid var(--global-border-color, #e5e7eb);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65em;
-  font-weight: 700;
-  color: var(--link-color, #2196F3);
-  flex-shrink: 0;
-  letter-spacing: 0;
+  overflow: hidden;
 }
+
 .org-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
-  border-radius: 6px;
-  border: 1px solid var(--border-color, #dde);
-  background: #fff;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
   flex-shrink: 0;
-  padding: 3px;
+}
+
+.org-logo-placeholder {
+  width: 52px;
+  height: 52px;
+  background: var(--global-card-bg-color, #f0f9ff);
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: 800;
+  color: var(--global-link-color, #0284c7);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+}
+
+.timeline-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0 !important;
 }
 
 .timeline-title {
   font-size: 1.0em;
   font-weight: 700;
-  margin: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   line-height: 1.3;
+  color: var(--global-text-color, #111827);
+  letter-spacing: -0.02em;
+}
+
+.timeline-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 0.2rem !important;
+}
+
+.timeline-org-name {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--global-text-color, #374151);
+}
+
+.timeline-date {
+  font-size: 0.79em;
+  font-weight: 400;
+  color: var(--global-muted-color, #9ca3af);
+  display: flex;
+  align-items: center;
+}
+.timeline-date::before {
+  content: '·';
+  margin: 0 0.4em;
+  color: var(--global-border-color, #d1d5db);
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .timeline-subtitle {
-  font-size: 0.85em;
-  color: var(--muted-text-color, #777);
+  font-size: 0.82em;
+  color: var(--global-muted-color, #6b7280);
   margin: 0;
+  font-weight: 500;
 }
 
 .timeline-badge {
-  display: inline-block;
-  background: #e8f5e9;
-  color: #2e7d32;
-  border-radius: 12px;
-  padding: 0.2em 0.7em;
-  font-size: 0.72em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  background: var(--global-badge-bg, #dcfce7);
+  color: var(--global-badge-text, #166534);
+  border-radius: 20px;
+  padding: 0.18em 0.65em;
+  font-size: 0.7em;
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
+  border: 1px solid rgba(22,101,52,0.15);
 }
-
-.timeline-period {
-  font-size: 0.82em;
-  color: var(--muted-text-color, #777);
-  margin: 0.3rem 0 0.6rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+.timeline-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulse-green 1.8s ease-in-out infinite;
+  flex-shrink: 0;
 }
-
-.timeline-bullets {
-  margin: 0;
-  padding-left: 1.3em;
-  font-size: 0.9em;
-  line-height: 1.65;
-  color: var(--text-color, #494e52);
-}
-
-.timeline-bullets li {
-  margin-bottom: 0.2rem;
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 /* ============================================================
@@ -333,46 +385,74 @@ redirect_from:
 
 .edu-card {
   padding: 1.1rem 1.2rem;
-  border: 1px solid var(--border-color, #e0e0e0);
-  border-radius: 10px;
-  background: var(--background-color, #fff);
+  border: none;
+  border-top: 3px solid var(--global-link-color, #0284c7);
+  border-radius: 0 0 12px 12px;
+  background: var(--global-card-bg-color, #f8fafc);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .edu-card:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.09);
   transform: translateY(-2px);
 }
 
-.edu-card-icon {
-  font-size: 1.6em;
-  margin-bottom: 0.5rem;
+.edu-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.edu-logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--global-bg-color, #fff);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.edu-score {
+  display: inline-block;
+  background: var(--global-badge-bg, #dcfce7);
+  color: var(--global-badge-text, #166534);
+  border-radius: 6px;
+  padding: 0.2em 0.6em;
+  font-size: 0.72em;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .edu-card-institution {
   font-weight: 700;
   font-size: 1.0em;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
+  color: var(--global-text-color, #111827);
+  letter-spacing: -0.01em;
 }
 
 .edu-card-degree {
-  font-size: 0.85em;
-  color: var(--muted-text-color, #777);
-  margin-bottom: 0.3rem;
+  font-size: 0.83em;
+  color: var(--global-muted-color, #6b7280);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
 }
 
 .edu-card-meta {
-  font-size: 0.8em;
-  color: var(--muted-text-color, #888);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-size: 0.78em;
+  color: var(--global-muted-color, #6b7280);
 }
 
 .edu-highlight {
   display: inline-block;
-  background: var(--masthead-background-color, #f0f4ff);
-  color: var(--link-color, #2196F3);
+  background: var(--global-card-bg-color, #eff6ff);
+  color: var(--global-link-color, #0284c7);
   border-radius: 4px;
   padding: 0.1em 0.45em;
   font-weight: 600;
@@ -390,8 +470,9 @@ redirect_from:
   font-size: 1.4em;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid var(--border-color, #e0e0e0);
+  border-bottom: 2px solid var(--global-border-color, #e5e7eb);
   padding-bottom: 0.5rem;
+  color: var(--global-text-color, #111827);
 }
 
 .featured-grid {
@@ -404,9 +485,11 @@ redirect_from:
 .featured-card {
   position: relative;
   padding: 1.2rem 1.2rem 1.4rem 1.2rem;
-  border: 1px solid var(--border-color, #e0e0e0);
-  border-radius: 10px;
-  background: var(--background-color, #fff);
+  border: none;
+  border-top: 3px solid var(--global-link-color, #0284c7);
+  border-radius: 0 0 12px 12px;
+  background: var(--global-card-bg-color, #f8fafc);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
   transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
   flex-direction: column;
@@ -414,14 +497,14 @@ redirect_from:
 }
 
 .featured-card:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.09);
   transform: translateY(-3px);
 }
 
 .featured-badge {
   display: inline-block;
-  background: #fff3e0;
-  color: #e65100;
+  background: var(--global-accent-badge-bg, #fff7ed);
+  color: var(--global-accent-badge-text, #c2410c);
   border-radius: 4px;
   padding: 0.15em 0.55em;
   font-size: 0.72em;
@@ -432,23 +515,26 @@ redirect_from:
 .featured-card-title {
   font-weight: 700;
   font-size: 0.95em;
-  line-height: 1.4;
+  line-height: 1.45;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .featured-card-title a {
   text-decoration: none;
-  color: var(--text-color, #494e52);
+  color: var(--global-text-color, #111827);
+  transition: color 0.15s;
 }
 
 .featured-card-title a:hover {
-  color: var(--link-color, #2196F3);
+  color: var(--global-link-color, #0284c7);
 }
 
 .featured-card-highlight {
   font-size: 0.8em;
-  color: var(--muted-text-color, #777);
+  color: var(--global-muted-color, #6b7280);
   font-style: italic;
+  line-height: 1.5;
 }
 
 .featured-card-tags {
@@ -459,13 +545,26 @@ redirect_from:
 }
 
 .f-tag {
-  background: var(--masthead-background-color, #f0f4ff);
-  color: var(--link-color, #3f51b5);
+  background: var(--global-card-bg-color, #f0f9ff);
+  color: var(--global-link-color, #0284c7);
   border-radius: 4px;
   padding: 0.12em 0.45em;
   font-size: 0.7em;
   font-weight: 500;
 }
+
+/* ============================================================
+   DARK MODE BADGE OVERRIDES
+   ============================================================ */
+html[data-theme="dark"] {
+  --global-badge-bg: #14532d;
+  --global-badge-text: #86efac;
+  --global-accent-badge-bg: #431407;
+  --global-accent-badge-text: #fdba74;
+}
+
+/* Ensure timeline-item::before transform override doesn't conflict */
+.timeline-item { transform-origin: left center; }
 
 /* ============================================================
    RESPONSIVE
@@ -484,16 +583,16 @@ redirect_from:
      HERO
      ============================================================ -->
 <div class="hero-section">
-  <h1 class="hero-greeting">Hi, I'm <span style="color: var(--link-color, #2196F3);">Ankan Ghosh</span></h1>
+  <h1 class="hero-greeting">Hi, I'm <span style="color: var(--global-link-color, #0284c7);">Ankan Ghosh</span></h1>
   <div class="hero-typed-wrapper">
     <span id="typed-text"></span><span class="typed-cursor"></span>
   </div>
   <p class="hero-bio">
-    I build production-grade computer vision and ML systems — from medical image segmentation and OCR pipelines to LLM workflows and multi-modal models. Currently leading vision projects at <strong>AIVAR (AWS Partner)</strong>; previously Senior CV Engineer at <strong>OpenCV</strong>. I also write in-depth technical articles at <strong>LearnOpenCV</strong>, reaching thousands of engineers worldwide.
+    I build production-grade ML & Physical AI (Computer Vision and Robotics) Systems - from CV/OCR and VLM pipelines to Agentic Workflows and MLOps Deployments accross <strong>BFSI, FMCG and HCLS</strong>. Currently leading vision projects at <strong>AIVAR (AWS Partner)</strong>; previously Senior CV Engineer at <strong>OpenCV</strong>. I also write in-depth technical articles at <strong>LearnOpenCV</strong>, reaching thousands of engineers worldwide.
   </p>
   <div class="hero-cta">
-    <a href="/cv/" class="cta-primary">View CV</a>
-    <a href="/writings/" class="cta-secondary">Read Writings</a>
+    <a href="/resume/" class="cta-primary">View Resume</a>
+    <a href="/writings/" class="cta-secondary">Publications</a>
     <a href="https://scholar.google.com/citations?user=2wYGQJkAAAAJ&hl=en" target="_blank" rel="noopener" class="cta-secondary">Google Scholar</a>
   </div>
 </div>
@@ -511,11 +610,11 @@ redirect_from:
     <span class="stat-label">Years at OpenCV</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">3</span>
+    <span class="stat-number">20+</span>
     <span class="stat-label">Deployed Projects</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">20+</span>
+    <span class="stat-number">30+</span>
     <span class="stat-label">CV / LLM Apps Built</span>
   </div>
   <div class="stat-item">
@@ -538,58 +637,49 @@ redirect_from:
     <div class="timeline">
 
       <div class="timeline-item">
-        <div class="timeline-header">
-          <div class="timeline-org">
-            <img src="/images/logo-aivar.png" alt="AIVAR" class="org-logo-img" />
-            <div>
-              <p class="timeline-title">Senior Machine Learning Engineer</p>
-              <p class="timeline-subtitle">AIVAR &mdash; AWS Partner</p>
-            </div>
-          </div>
-          <span class="timeline-badge">Current</span>
+        <div class="org-logo-wrap">
+          <img src="/images/logo-aivar.png" alt="AIVAR" class="org-logo-img" />
         </div>
-        <p class="timeline-period">&#128197; Sept 2025 &ndash; Present &nbsp;|&nbsp; &#128205; Bengaluru, India</p>
-        <ul class="timeline-bullets">
-          <li>Leading all Vision projects, managing teams of 20+ Engineers.</li>
-          <li>Delivered 3 projects: Medical image segmentation, Civil tile detection, Finance OCR &amp; RAG pipeline — on AWS (SageMaker, ECS, Batch, S3, DynamoDB, SQS, CloudWatch).</li>
-          <li>Architecting solutions for clients including Swiggy, Licious, Zepto, and LendenClub.</li>
-        </ul>
+        <div class="timeline-text">
+          <div class="timeline-top-row">
+            <p class="timeline-title">Senior Machine Learning Engineer</p>
+            <span class="timeline-badge">Current</span>
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">AIVAR &mdash; AWS Partner</span>
+            <span class="timeline-date">Sept 2025 &ndash; Present</span>
+          </div>
+        </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-header">
-          <div class="timeline-org">
-            <img src="/images/logo-opencv.png" alt="OpenCV" class="org-logo-img" />
-            <div>
-              <p class="timeline-title">Senior Computer Vision Engineer</p>
-              <p class="timeline-subtitle">OpenCV</p>
-            </div>
+        <div class="org-logo-wrap">
+          <img src="/images/logo-opencv.png" alt="OpenCV" class="org-logo-img" />
+        </div>
+        <div class="timeline-text">
+          <div class="timeline-top-row">
+            <p class="timeline-title">Senior Computer Vision Engineer</p>
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">OpenCV</span>
+            <span class="timeline-date">Oct 2023 &ndash; Aug 2025</span>
           </div>
         </div>
-        <p class="timeline-period">&#128197; Oct 2023 &ndash; Aug 2025 &nbsp;|&nbsp; &#128205; Bengaluru, India</p>
-        <ul class="timeline-bullets">
-          <li>Led R&amp;D at OpenCV University; architected solutions from PoC to production — CNNs, YOLO11, SAM2, ViT, DETR, SDXL, NeRF, 3DGS, VLMs, PEFT, RLHF, SFT, LoRA, MCP, ADK.</li>
-          <li>Engineered LLM workflow with 82.5% accuracy for sales call analysis using HuggingFace, OpenAI, FastAPI, WhisperX, deployed on AWS (EC2, S3, RDS).</li>
-          <li>Built OpenCV Demo Website; developed 20+ Computer Vision and LLM applications.</li>
-          <li>Mentored junior engineers; assisted marketing &amp; sales; led the blog team.</li>
-        </ul>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-header">
-          <div class="timeline-org">
-            <img src="/images/logo-iit-roorkee.png" alt="IIT Roorkee" class="org-logo-img" />
-            <div>
-              <p class="timeline-title">Computer Vision Intern</p>
-              <p class="timeline-subtitle">IIT Gandhinagar</p>
-            </div>
+        <div class="org-logo-wrap">
+          <img src="images/logo-iitgn.png" alt="IIT Gandhinagar" class="org-logo-img" />
+        </div>
+        <div class="timeline-text">
+          <div class="timeline-top-row">
+            <p class="timeline-title">Computer Vision Intern</p>
+          </div>
+          <div class="timeline-meta-row">
+            <span class="timeline-org-name">IIT Gandhinagar</span>
+            <span class="timeline-date">Sep 2022 &ndash; Feb 2023</span>
           </div>
         </div>
-        <p class="timeline-period">&#128197; Sep 2022 &ndash; Feb 2023 &nbsp;|&nbsp; &#128205; Gandhinagar, India</p>
-        <ul class="timeline-bullets">
-          <li>Implemented Depth Estimation on OAK-D camera and deployed on Jetson Nano.</li>
-          <li>Contribution led to the startup being selected for the META XR Program.</li>
-        </ul>
       </div>
 
     </div>
@@ -600,34 +690,35 @@ redirect_from:
     <div class="education-grid">
 
       <div class="edu-card">
-        <div class="edu-card-icon">&#127979;</div>
+        <div class="edu-card-header">
+          <img src="/images/makaut-logo.png" alt="MAKAUT" class="edu-logo-img" />
+          <span class="edu-score">CGPA 9.2 / 10</span>
+        </div>
         <div class="edu-card-institution">MAKAUT</div>
         <div class="edu-card-degree">B.S. in Information Technology (AI)</div>
-        <div class="edu-card-meta">
-          2020 &ndash; 2023 &nbsp;&bull;&nbsp; Kolkata, India
-        </div>
-        <div class="edu-card-meta" style="margin-top:0.3rem;">
-          <span class="edu-highlight">CGPA 9.2 / 10</span>
-        </div>
+        <div class="edu-card-meta">2020 &ndash; 2023 &nbsp;&bull;&nbsp; Kolkata, India</div>
       </div>
 
       <div class="edu-card">
-        <div class="edu-card-icon"><img src="/images/logo-iit-roorkee.png" alt="IIT Roorkee" style="width:36px;height:36px;object-fit:contain;" /></div>
+        <div class="edu-card-header">
+          <img src="/images/logo-iit-roorkee.png" alt="IIT Roorkee" class="edu-logo-img" />
+        </div>
         <div class="edu-card-institution">IIT Roorkee</div>
         <div class="edu-card-degree">Deep Learning &amp; Artificial Intelligence</div>
-        <div class="edu-card-meta">Sep &ndash; Feb 2021 &nbsp;&bull;&nbsp; Roorkee, India</div>
+        <div class="edu-card-meta">Sep 2020 &ndash; Feb 2021 &nbsp;&bull;&nbsp; Roorkee, India</div>
       </div>
 
       <div class="edu-card">
-        <div class="edu-card-icon">&#127891;</div>
+        <div class="edu-card-header">
+          <img src="/images/nnb-logo.jpg" alt="NNB" class="edu-logo-img" />
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem;">
+            <span class="edu-score">10+2: 82%</span>
+            <span class="edu-score">10th: 88%</span>
+          </div>
+        </div>
         <div class="edu-card-institution">Bolpur NNB High School</div>
         <div class="edu-card-degree">10+2 Science</div>
-        <div class="edu-card-meta">
-          May 2019 &nbsp;&bull;&nbsp; Kolkata, India
-        </div>
-        <div class="edu-card-meta" style="margin-top:0.3rem;">
-          <span class="edu-highlight">10+2: 82%</span>&nbsp;&nbsp;<span class="edu-highlight">10th: 88%</span>
-        </div>
+        <div class="edu-card-meta">May 2019 &nbsp;&bull;&nbsp; Kolkata, India</div>
       </div>
 
     </div>
@@ -638,7 +729,7 @@ redirect_from:
      FEATURED WRITINGS
      ============================================================ -->
 <div class="featured-section">
-  <h2>Featured Writings</h2>
+  <h2>Featured Publications</h2>
   <div class="featured-grid">
 
     <div class="featured-card">
@@ -694,7 +785,7 @@ redirect_from:
     </div>
 
   </div>
-  <a href="/writings/" class="btn btn--primary">View All 26 Articles →</a>
+  <a href="/writings/" class="btn btn--primary">View All Publications →</a>
 </div>
 
 <!-- ============================================================
@@ -704,9 +795,9 @@ redirect_from:
 document.addEventListener('DOMContentLoaded', function() {
   var roles = [
     'Senior ML Engineer',
-    'Computer Vision Researcher',
-    'Technical Writer @ LearnOpenCV',
-    'Generative AI Builder'
+    'Computer Vision Architect',
+    'Author @ LearnOpenCV',
+    'Research @ Cohere'
   ];
   var el = document.getElementById('typed-text');
 

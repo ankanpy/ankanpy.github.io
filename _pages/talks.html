@@ -1,16 +1,115 @@
 ---
-layout: archive
-title: "Talks and presentations"
+layout: single
+title: "Conferences"
 permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+<style>
+.talks-banner {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+.talks-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
 
-{% endif %}
+.talks-intro {
+  font-size: 1.0em;
+  line-height: 1.7;
+  color: var(--global-text-color, #374151);
+  margin-bottom: 1.8rem;
+}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
-{% endfor %}
+.talks-sessionize-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65em 1.4em;
+  background: var(--global-link-color, #0284c7);
+  color: #fff !important;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-decoration: none !important;
+  transition: opacity 0.15s, transform 0.15s, box-shadow 0.15s;
+  margin-bottom: 2.5rem;
+}
+
+.talks-sessionize-cta:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.talks-section-header {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 1.2rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--global-border-color, #e5e7eb);
+  color: var(--global-text-color, #111827);
+  letter-spacing: -0.01em;
+}
+
+.talk-item {
+  padding: 1rem 1.2rem;
+  border: none;
+  border-left: 3px solid var(--global-link-color, #0284c7);
+  border-radius: 0 12px 12px 0;
+  background: var(--global-card-bg-color, #f8fafc);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.talk-item:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+  transform: translateX(2px);
+}
+
+.talk-title {
+  font-weight: 700;
+  font-size: 0.97em;
+  color: var(--global-text-color, #111827);
+  margin: 0 0 0.2rem 0;
+  letter-spacing: -0.01em;
+}
+
+.talk-meta {
+  font-size: 0.8em;
+  color: var(--global-muted-color, #6b7280);
+  font-weight: 500;
+}
+</style>
+
+<div class="talks-banner">
+  <img src="/images/talks.png" alt="Ankan Ghosh speaking at workshops and conferences" />
+</div>
+
+<p class="talks-intro">
+  I speak at universities, developer meetups, and conferences on Computer Vision, Deep Learning, and LLMs. Topics range from hands-on OpenCV workshops to cutting-edge research talks on VLMs and Robotics.
+</p>
+
+<a href="https://sessionize.com/ankan/" target="_blank" rel="noopener" class="talks-sessionize-cta">
+  View All Talks on Sessionize &rarr;
+</a>
+
+<h2 class="talks-section-header">Recent Talks</h2>
+
+<div class="talk-item">
+  <p class="talk-title">VisionCraft: Unveiling the Magic of Computer Vision</p>
+  <p class="talk-meta">2-day workshop &nbsp;&middot;&nbsp; Prestige Institute of Engineering (PIEMR), Indore</p>
+</div>
+
+<div class="talk-item">
+  <p class="talk-title">TechX Bangalore 2024 &mdash; OpenCV Workshop</p>
+  <p class="talk-meta">IEEE Computer Society &nbsp;&middot;&nbsp; BMS College of Engineering &amp; Christ University, Bengaluru</p>
+</div>
