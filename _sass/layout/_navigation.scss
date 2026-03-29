@@ -15,9 +15,9 @@
   padding-right: 2em;
   font-family: $sans-serif;
   -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.30s;
-          animation-delay: 0.30s;
+  animation: intro 0.3s both;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 
   @include breakpoint($large) {
     padding-left: 1em;
@@ -50,7 +50,6 @@
     font-weight: bold;
   }
 }
-
 
 /*
    Post pagination navigation links
@@ -167,7 +166,6 @@
   border-top: 1px solid var(--global-border-color);
 }
 
-
 /*
    Priority plus navigation
    ========================================================================== */
@@ -192,26 +190,45 @@
   button {
     position: absolute;
     height: 2.5rem;
+    width: 2.5rem;
     right: 0;
-    padding: 0 0.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0;
     outline: none;
-    background-color: var(--global-bg-color);
+    background-color: transparent;
     color: var(--global-text-color);
     cursor: pointer;
     z-index: 100;
+    border-radius: 8px;
+    -webkit-transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: rgba(128, 128, 128, 0.1);
+    }
   }
 
   .visible-links {
-    display: table;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 2.75rem; // leave room for the absolutely-positioned hamburger button
+
+    @include breakpoint($large) {
+      padding-right: 0; // no hamburger on desktop
+    }
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
 
       &:first-child {
         font-weight: bold;
         text-wrap: wrap;
+        margin-right: auto;
 
         a {
           margin-left: 0;
@@ -236,76 +253,94 @@
 
     a {
       position: relative;
+      -webkit-transition: color 0.2s ease;
+      transition: color 0.2s ease;
 
       &:before {
         content: "";
         position: absolute;
         left: 0;
         bottom: 0;
-        height: 4px;
-        background: var(--global-border-color);
+        height: 2px;
+        background: var(--global-base-color);
         width: 100%;
-        -webkit-transition: $global-transition;
-        transition: $global-transition;
+        -webkit-transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         -webkit-transform: scaleX(0);
             -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
+                transform: scaleX(0);
+        transform-origin: center;
       }
 
       &:hover:before {
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
+                transform: scaleX(1);
       }
     }
   }
 
   .hidden-links {
-    position: absolute;
-    top: 100%;
+    // Mobile: full-screen right slider
+    position: fixed;
+    top: 0;
     right: 0;
-    margin-top: 15px;
-    padding: 5px;
-    border: 1px solid var(--global-border-color);
-    border-radius: $border-radius;
+    bottom: 0;
+    left: auto;
+    width: 75vw;
+    height: 100vh;
+    max-width: 320px;
+    display: flex !important; // Override .hidden utility
+    flex-direction: column;
+    padding: 5rem 0 2rem;
+    margin: 0;
     background: var(--global-bg-color);
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    border-left: 1px solid var(--global-border-color);
+    box-shadow: -4px 0 24px rgba(#000, 0.15);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    -webkit-transition:
+      -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.35s;
+    transition:
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.35s;
+    z-index: 99;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &:not(.hidden) {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    &:before,
+    &:after {
+      content: none;
+    }
 
     a {
       margin: 0;
-      padding: 10px 20px;
-      font-size: $type-size-5;
+      padding: 1rem 2rem;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--global-masthead-link-color);
+      -webkit-transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+      transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
 
       &:hover {
         color: var(--global-masthead-link-color-hover);
-        background: var(--global-border-color);
+        background: rgba(128, 128, 128, 0.08);
       }
-    }
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: var(--global-border-color) transparent;
-      display: block;
-      z-index: 0;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: var(--global-bg-color) transparent;
-      display: block;
-      z-index: 1;
     }
 
     li {
@@ -316,9 +351,78 @@
         border-bottom: none;
       }
     }
+
+    // Desktop: revert to small dropdown
+    @include breakpoint($large) {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      bottom: auto;
+      left: auto;
+      width: auto;
+      max-width: none;
+      display: block !important;
+      flex-direction: unset;
+      padding: 5px;
+      margin-top: 15px;
+      border-left: none;
+      border: 1px solid var(--global-border-color);
+      border-radius: $border-radius;
+      box-shadow: 0 4px 16px rgba(#000, 0.12);
+      -webkit-transform: none !important;
+      transform: none !important;
+      -webkit-transition: none;
+      transition: none;
+      overflow-y: visible;
+      visibility: visible;
+
+      &.hidden {
+        display: none !important;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      &:not(.hidden) {
+        display: block !important;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -11px;
+        right: 10px;
+        width: 0;
+        border-style: solid;
+        border-width: 0 10px 10px;
+        border-color: var(--global-border-color) transparent;
+        display: block;
+        z-index: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        width: 0;
+        border-style: solid;
+        border-width: 0 10px 10px;
+        border-color: var(--global-bg-color) transparent;
+        display: block;
+        z-index: 1;
+      }
+
+      a {
+        padding: 10px 20px;
+        font-size: $type-size-5;
+        font-weight: normal;
+        letter-spacing: normal;
+      }
+    }
   }
 }
-
 
 /*
    Navigation list
@@ -374,7 +478,6 @@
   text-transform: uppercase;
   border-bottom: 1px solid var(--global-border-color);
 }
-
 
 /*
    Table of contents navigation
@@ -440,5 +543,44 @@
     @include breakpoint($medium) {
       display: block;
     }
+  }
+}
+
+/*
+   Mobile nav overlay
+   ========================================================================== */
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 15;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+body.nav-open {
+  @media (max-width: 924px) {
+    overflow: hidden;
   }
 }
