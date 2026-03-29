@@ -143,9 +143,7 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
+  width: 120px;
 
   @include breakpoint($large) {
     display: block;
@@ -219,11 +217,9 @@
 
 .author__urls-wrapper {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
   font-family: $sans-serif;
   z-index: 10;
-  position: relative;
   cursor: pointer;
 
   li:last-child {
@@ -232,12 +228,11 @@
     }
   }
 
-  @include breakpoint($large) {
-    display: block;
-  }
-
   button {
+    width: 100%;
     margin-bottom: 0;
+    padding: 0.6em 1em;
+    font-size: $type-size-5;
 
     @include breakpoint($large) {
       display: none;
